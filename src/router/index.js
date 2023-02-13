@@ -1,19 +1,53 @@
 import { createRouter, createWebHistory } from 'vue-router'
 import HomeView from '../views/HomeView.vue'
+import 'bootstrap/dist/css/bootstrap.css'
 
 const routes = [
   {
     path: '/',
-    name: 'home',
-    component: HomeView
+    redirect: '/news'
+    // name: 'home',
+    // component: HomeView
   },
   {
-    path: '/about',
-    name: 'about',
-    // route level code-splitting
-    // this generates a separate chunk (about.[hash].js) for this route
-    // which is lazy-loaded when the route is visited.
-    component: () => import(/* webpackChunkName: "about" */ '../views/AboutView.vue')
+    path: '/news',
+    name: 'NewsView',
+    component: () =>
+      import(
+        /* webpackChunkName: "news", webpackPrefetch:true */ '../views/NewsView.vue'
+      )
+  },
+  {
+    path: '/ask',
+    name: 'AskView',
+    component: () =>
+      import(
+        /* webpackChunkName: "news", webpackPrefetch:true */ '../views/AskView.vue'
+      )
+  },
+  {
+    path: '/jobs',
+    name: 'JobsView',
+    component: () =>
+      import(
+        /* webpackChunkName: "news", webpackPrefetch:true */ '../views/JobsView.vue'
+      )
+  },
+  {
+    path: '/user',
+    name: 'UserView',
+    component: () =>
+      import(
+        /* webpackChunkName: "news", webpackPrefetch:true */ '../views/UserView.vue'
+      )
+  },
+  {
+    path: '/item',
+    name: 'ItemView',
+    component: () =>
+      import(
+        /* webpackChunkName: "news", webpackPrefetch:true */ '../views/ItemView.vue'
+      )
   }
 ]
 
